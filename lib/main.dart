@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'screens/screens.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,31 +36,12 @@ class MyApp extends StatelessWidget {
         ),
         buttonTheme: ButtonThemeData(),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/' : (context) => LoginScreen(),
+        '/topics' : (context) => TopicScreen(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Container(
-        child: Center(
-          child: Text(
-            'This is home page',
-            style: GoogleFonts.nunito(
-                textStyle: Theme.of(context).textTheme.headline),
-          ),
-        ),
-      ),
-    );
-  }
-}
