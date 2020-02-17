@@ -71,8 +71,12 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: RoundedShadow.fromRadius(
-              32,
+            child: RoundedShadow(
+              bottomLeftRadius: 0,
+              bottomRightRadius: 0,
+              topRightRadius: 32,
+              topLeftRadius: 32,
+              shadowColor: Color(0xff303238),
               child: Container(
                 width: double.infinity,
                 color: Color(0xff303238),
